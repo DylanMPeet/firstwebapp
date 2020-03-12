@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block title %}Videos{% endblock %}
+
+{% block content %}
+
+<h1>Videos</h1>
+
+<br>
+
+{% for videos in vid %}
+    <div class="col-lg-4 col-sm-6 ">
+        <div class="thumbnail">
+            <video height="360px" width="100%" controls>
+            <source src="{{ videos.videos.url }}" type="video/mp4"/>
+            </video>
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}

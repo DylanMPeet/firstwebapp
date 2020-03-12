@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% block title %}Gallery{% endblock %}
+
+{% block content %}
+
+<h1>Photos</h1>
+
+<br>
+
+{% for image in img %}
+    <div class="col-lg-4 col-sm-6 ">
+        <div class="thumbnail">
+            <img src="{{ image.image.url }}"/>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

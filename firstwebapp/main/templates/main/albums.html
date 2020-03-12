@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% block title %}Albums{% endblock %}
+
+{% block content %}
+    <h1>Albums</h1>
+    <h5><a href="/views">Back to Albums</a> </h5>
+
+    <h3>{{ project.title }}</h3>
+    <img src= "{{ project.artwork.url }}" height="450px" width="50%"/>
+    <ol>
+        <br>
+        {% for track in project.track_set.all %}
+            <li>
+                {{track.name}}
+                <br>
+                <audio controls>
+                    <source src="{{ track.song.url }}" type="audio/mpeg">
+                </audio>
+            </li>
+
+        {% endfor%}
+    </ol>
+{% endblock %}

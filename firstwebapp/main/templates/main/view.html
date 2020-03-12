@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <h1>Albums</h1>
+    <ul>
+    {% for a in albums%}
+        <li><a href="/{{a.id}}"><h3>{{a.title}}</h3></a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
